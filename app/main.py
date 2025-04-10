@@ -20,8 +20,8 @@ def find_husband_wife(person: dict) -> None:
 
     wife_name = person.get("wife")
     if wife_name and wife_name in Person.people:
-        Person.people[name].wife = Person.people[wife_name]
+        setattr(Person.people[name], "wife", Person.people[wife_name])
 
     husband_name = person.get("husband")
     if husband_name and husband_name in Person.people:
-        Person.people[name].husband = Person.people[husband_name]
+        setattr(Person.people[name], "husband", Person.people[husband_name])
